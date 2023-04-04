@@ -1,0 +1,21 @@
+<main class="index">
+    <header class="masthead d-flex">
+        <div class="container text-center my-auto mt-5">
+            <div class="row mt-5">
+                <div class="col-md-4 mx-auto mt-5">
+                    <h1 class="mb-1">Sistema de Gestión de Calidad</h1>
+                    <h3 class="mb-5 mt-3">
+                        <em>Gestión de los Procesos del Alcance</em>
+                    </h3>
+                    {{#unless user}}
+                    <h3>
+                        <a href="/signin" class="btn btn-primary">
+                            <em>Ingreso</em>           
+                        </a>
+                    </h3>
+                    {{/unless}}
+                </div>
+            </div>
+        </div>
+    </header>
+</main>

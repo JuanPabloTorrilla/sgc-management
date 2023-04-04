@@ -1,0 +1,97 @@
+{{#hallazgo}}
+<div class="container p-4">
+    <div class="row text-center">
+        <h2>EDITAR EL HALLAZGO</h2>
+    </div>
+    <div class="row">
+        <div class="card">
+            <form action="{{id}}" method="post">
+                <div class="card-body flex-wrap" id="riesgos-form">    
+                    <div class="col-md-5 gestion-xl">
+                        <div class="form-floating mb-3">
+                            <textarea id="riesgo" type="text" rows="2" class="form-control" name="hallazgo" placeholder="Hallazgo detectado" required>{{hallazgo}}</textarea>
+                            <label for="hallazgo">Hallazgo detectado</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <textarea type="text" rows="2" class="form-control" name="causa" placeholder="Análisis de causa" required>{{causa}}</textarea>
+                            <label for="causa">Análisis de causa</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input id="fecha_deteccion" type="date" class="form-control" name="fecha_deteccion" value="{{fecha_deteccion}}" required>
+                            <label for="fecha_deteccion">Fecha de detección</label>
+                        </div>
+                         <div class="form-floating mb-3">
+                            <select class="form-control" name="fuente" placeholder="Fuente" required>
+                                <option value="{{fuente}}">{{fuente}}</option>
+                                <option value="Autodetección">Autodetección</option>
+                                <option value="Usuario">Usuario</option>
+                                <option value="Auditoría">Auditoría</option>
+                            </select>
+                            <label for="fuente">Fuente</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" name="riesgo_asociado" placeholder="Riesgo asociado" value="{{riesgo_asociado}}" required>
+                            <label for="riesgo_asociado">Riesgo asociado</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" name="correccion" placeholder="Corrección" value="{{correccion}}" required>
+                            <label for="correccion">Corrección</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" name="accion_correctiva" placeholder="Acción correctiva" value="{{accion_correctiva}}" required>
+                            <label for="accion_correctiva">Acción correctiva</label>
+                        </div>
+                    </div>
+                    <div class="col-md-5 gestion-xl">
+                        <div class="form-floating mb-3">
+                            <input type="date" class="form-control" name="fecha_ap_planeada" value="{{fecha_ap_planeada}}" required>
+                            <label for="fecha_ap_planeada">Fecha planeada de aplicación</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="date" class="form-control" name="fecha_ver_planeada" value="{{fecha_ver_planeada}}" required>
+                            <label for="fecha_ver_planeada">Fecha planeada de verificación</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="date" class="form-control" name="fecha_ap_real" value="{{fecha_ap_real}}">
+                            <label for="fecha_ap_real">Fecha real de aplicación</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="date" class="form-control" name="fecha_ver_real" value="{{fecha_ver_real}}">
+                            <label for="fecha_ver_real">Fecha real de verificación</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" name="evaluacion" placeholder="Método de evaluación de la eficacia" value="{{evaluacion}}" required>
+                            <label for="evaluacion">Método de evaluación de la eficacia</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <select class="form-control" name="resultado" placeholder="Resultado" required>
+                                <option value="{{resultado}}">{{resultado}}</option>
+                                <option value="Pendiente">Pendiente</option>
+                                <option value="En proceso">En proceso</option>
+                                <option value="Acción eficaz">Acción eficaz</option>
+                                <option value="Acción parcialmente eficaz">Acción parcialmente eficaz</option>
+                                <option value="Acción no eficaz">Acción no eficaz</option>
+                            </select>
+                            <label for="resultado">Resultado</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <textarea type="text" rows="2" class="form-control" name="observaciones" placeholder="Observaciones">{{observaciones}}</textarea>
+                            <label for="observaciones">Observaciones</label>
+                        </div>
+                    </div>
+                </div>
+                    <div class="row">
+                        <button class="btn btn-success btn-block">
+                            Editar Hallazgo
+                        </button>
+                    </div>
+                </form>
+        </div>
+    </div>
+    <div class="col-md-3 p-4 mx-auto text-center">
+        <a href='/no_conforme' class="mx-auto btn btn-primary btn-block">
+            Volver
+        </a>
+    </div>  
+</div>
+{{/hallazgo}}

@@ -1,0 +1,109 @@
+    
+    <div class="container p-4">
+        <header class="masthead d-flex justify-content-center">
+            <h2>GESTIÓN DEL HALLAZGO</h2>
+        </header>
+            <div class="row mt-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Datos del hallazgo</h3>
+                    </div>
+                    {{#hallazgo}}
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <h5 class="card-title text-muted">Hallazgo</h5>
+                            <p class="card-text">{{hallazgo}}</p>
+                        </div>
+                        <div class="mb-3">
+                            <p>Causa: {{causa}}</p>
+                        </div>
+                        <div class="mb-3">
+                            <p>Fuente: {{fuente}}</p>
+                        </div>
+                        <div class="mb-3">
+                           <p>Riesgo asociado: {{riesgo_asociado}}</p>
+                        </div>
+                        <div class="mb-3">
+                            <p>Fecha de detección: {{fecha_deteccion}}</p>
+                        </div>
+                        {{#if (ifValue valor_riesgo "Muy Alto")}}
+                            <div class="mb-3 text-bg-danger">
+                                <p>Valoración inicial del riesgo: {{valor_riesgo}}</p>
+                            </div>
+                        {{/if}}
+                        {{#if (ifValue valor_riesgo "Alto")}}
+                            <div class="mb-3 text-bg-warning">
+                                <p>Valoración inicial del riesgo: {{valor_riesgo}}</p>
+                            </div>
+                        {{/if}}
+                        {{#if (ifValue valor_riesgo "Moderado")}}
+                            <div class="mb-3 text-bg-secondary">
+                                <p>Valoración inicial del riesgo: {{valor_riesgo}}</p>
+                            </div>
+                        {{/if}}
+                        {{#if (ifValue valor_riesgo "Bajo")}}
+                            <div class="mb-3 text-bg-success">
+                                <p>Valoración inicial del riesgo: {{valor_riesgo}}</p>
+                            </div>
+                        {{/if}}
+                    </div>
+                    {{/hallazgo}}
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Estado actual del riesgo</h3>
+                    </div>
+                    <div class="card-body">
+                        {{#each acciones}}
+                            <div class="mb-3">
+                                <p>Acción {{math @index "+" 1}}: {{accion}}</p>
+                            </div>
+                        {{/each}}
+                        {{#gestion}}
+                            <div class="mb-3">
+                                <p>Frecuencia de control: {{frecuencia}}</p>
+                            </div>
+                            <div class="mb-3">
+                                <p>Fecha del último control: {{ultimo_control}}</p>
+                            </div>
+                            <div class="mb-3">
+                                <p>Fecha del próximo control: {{proximo_control}}</p>
+                            </div>
+                            <div class="mb-3">
+                                <p>Probabilidad Actual: {{probabilidad_final}}</p>
+                            </div>
+                            <div class="mb-3">
+                                <p>Impacto Actual: {{impacto_final}}</p>
+                            </div>
+                        {{#if (ifValue valor_riesgo_final "Muy Alto")}}
+                            <div class="mb-3 text-bg-danger">
+                                <p>Valoración actual del riesgo: {{valor_riesgo_final}}</p>
+                            </div>
+                        {{/if}}
+                        {{#if (ifValue valor_riesgo_final "Alto")}}
+                            <div class="mb-3 text-bg-warning">
+                                <p>Valoración actual del riesgo: {{valor_riesgo_final}}</p>
+                            </div>
+                        {{/if}}
+                        {{#if (ifValue valor_riesgo_final "Moderado")}}
+                            <div class="mb-3 text-bg-secondary">
+                                <p>Valoración actual del riesgo: {{valor_riesgo_final}}</p>
+                            </div>
+                        {{/if}}
+                        {{#if (ifValue valor_riesgo_final "Bajo")}}
+                            <div class="mb-3 text-bg-success">
+                                <p>Valoración actual del riesgo: {{valor_riesgo_final}}</p>
+                            </div>
+                        {{/if}}
+                        {{/gestion}}
+                    </div>
+                </div>
+            </div>
+    <div class="col-md-3 p-4 mx-auto text-center">
+        <a href='/no_conforme' class="mx-auto btn btn-primary btn-block">
+            Volver
+        </a>
+    </div>        
+    </div>

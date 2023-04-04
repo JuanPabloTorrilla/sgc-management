@@ -1,0 +1,44 @@
+<div class="container p-4">
+    <header class="masthead d-flex">
+        <div class="container text-center my-auto">
+            <div class="row mb-5">
+                <div class="col-md-4 mx-auto">
+                    <h1 class="hola">
+                        OBJETIVOS DEL PROCESO
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="row">
+        {{#each objetivos}}
+            <div class="row-md-3 mb-2">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <a href="/objetivos/gestion/{{idobjetivos}}">
+                        <div class="cardheader">
+                            <h6 class="card-title text-uppercase">
+                                OBJETIVO {{math @index "+" 1}}
+                            </h6>
+                        </div>
+                            <h5>{{objetivo}}</h5>
+                        </a> 
+                        <a href="/objetivos/delete/{{idobjetivos}}" class="btn btn-danger">Borrar</a>
+                        <a href="/objetivos/edit/{{idobjetivos}}" class="btn btn-secondary">Editar</a>
+                    </div>
+                </div>
+            </div>
+        {{else}}
+            <div class="row-md-4 mx-auto text-center">
+                <p>Aún no hay objeyivos para este proceso</p>
+            </div>
+        {{/each}}
+    </div>
+    <div class="col-md-3 p-4 mx-auto text-center">
+        <a href="objetivos/add">
+            <div class="btn btn-primary mx-auto text-center">
+                        <p>Agregar nuevo Objetivo</p>
+            </div>
+        </a>
+    </div>
+</div>

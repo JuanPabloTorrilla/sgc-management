@@ -1,0 +1,91 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="card">
+             <div class="row text-center bg-cyan">
+                <h2>AGREGAR NUEVO HALLAZGO</h2>
+             </div>
+            <form action="add" method="post">
+                <div class="card-body flex-wrap" id="riesgos-form">    
+                    <div class="col-md-4 gestion-xl">
+                        <div class="form-floating mb-3">
+                            <textarea id="riesgo" type="text" rows="2" class="form-control" name="hallazgo" placeholder="Hallazgo detectado" required></textarea>
+                            <label for="hallazgo">Hallazgo detectado</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <textarea type="text" rows="2" class="form-control" name="causa" placeholder="Análisis de causa" required></textarea>
+                            <label for="causa">Análisis de causa</label>
+                        </div>
+                        {{!-- <div class="form-floating mb-3">
+                            <input id="fecha_deteccion" type="date" class="form-control" name="fecha_deteccion" placeholder="Fecha de detección" required>
+                            <label for="fecha_deteccion">Fecha de detección</label>
+                        </div> --}}
+                         <div class="form-floating mb-3">
+                            <select class="form-control" name="fuente" placeholder="Fuente" required>
+                                <option>Fuente</option>
+                                <option value="Autodetección">Autodetección</option>
+                                <option value="Usuario">Usuario</option>
+                                <option value="Auditoría">Auditoría</option>
+                            </select>
+                            <label for="fuente">Fuente</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" name="riego_asociado" placeholder="Riesgo asociado" required>
+                            <label for="riesgo_asociado">Riesgo asociado</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" name="correccion" placeholder="Corrección" required>
+                            <label for="correccion">Corrección</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" name="accion_correctiva" placeholder="Acción correctiva" required>
+                            <label for="accion_correctiva">Acción correctiva</label>
+                        </div>
+                    </div>
+                    <div class="col-md-4 gestion-xl">
+                        <div class="form-floating mb-3">
+                            <input type="date" class="form-control" name="fecha_ap_planeada" placeholder="Fecha planeada de aplicación" required>
+                            <label for="fecha_ap_planeada">Fecha planeada de aplicación</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="date" class="form-control" name="fecha_ver_planeada" placeholder="Fecha planeada de verificación" required>
+                            <label for="fecha_ver_planeada">Fecha planeada de verificación</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="date" class="form-control" name="fecha_ap_real" placeholder="Fecha real de aplicación">
+                            <label for="fecha_ap_real">Fecha real de aplicación</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="date" class="form-control" name="fecha_ver_real" placeholder="Fecha real de verificación">
+                            <label for="fecha_ver_real">Fecha real de verificación</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" name="evaluacion" placeholder="Método de evaluación de la eficacia" required>
+                            <label for="evaluacion">Método de evaluación de la eficacia</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <select class="form-control" name="resultado" placeholder="Resultado" required>
+                                <option>Seleccionar...</option>
+                                <option value="Pendiente">Pendiente</option>
+                                <option value="En proceso">En proceso</option>
+                                <option value="Acción eficaz">Acción eficaz</option>
+                                <option value="Acción parcialmente eficaz">Acción parcialmente eficaz</option>
+                                <option value="Acción no eficaz">Acción no eficaz</option>
+                            </select>
+                            <label for="resultado">Resultado</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <textarea type="text" rows="2" class="form-control" name="observaciones" placeholder="Observaciones"></textarea>
+                            <label for="observaciones">Observaciones</label>
+                        </div>
+                    </div>
+                </div>
+                    <div class="row">
+                        <button class="btn btn-success btn-block">
+                            Agregar Hallazgo
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

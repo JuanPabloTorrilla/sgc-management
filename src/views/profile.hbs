@@ -1,0 +1,54 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="col mx-auto mt-2 mb-2">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h3>Organismo: {{user.area}}</h3>
+                    <h4>Proceso: {{user.alcance}}</h4>
+                    <a href="#" class="btn btn-primary m-4">
+                        Documentación del proceso
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header text-center text-white bg-dark bg-gradient">
+                    <h3>Resumen del proceso</h3>
+                </div>
+                <div class="card-header bg-secondary text-white">
+                    <p>Objetivos del Proceso {{length objetivos}}</p>
+                </div>
+                <div class="card-body d-flex flex-wrap bg-secondary text-white">
+
+                </div>
+                <div class="card-header bg-dark text-white"><p>Riegos: {{riesgos.cantidad}}</p></div>
+                <div class="card-body d-flex flex-wrap bg-dark text-white p-0">                    
+                    <div class="col border gestion">
+                    <p>Riesgos Eliminados: {{riesgos.eliminados}}</p></div>
+                    <div class="col border gestion">
+                    <p>Riesgos Controlados: {{riesgos.controlados}}</p></div>
+                    <div class="col border gestion">
+                    <p>Riesgos En proceso: {{riesgos.enProceso}}</p></div>
+                    <div class="col border gestion">
+                    <p>Riesgos Pendientes: {{riesgos.pendientes}}</p></div>
+                    <div class="col border gestion">
+                    <p>Riesgos No controlados: {{riesgos.noControlados}}</p></div>
+                </div>
+                <div class="card-header bg-secondary text-white"><p>No Conformidades: {{noConforme.cantidad}}</p></div>
+                <div class="card-body d-flex flex-wrap bg-secondary text-white gestion p-0 pb-2">                    
+                    <div class="col border gestion">
+                    <p>Acciones eficaces: {{noConforme.Eficaz}}</p></div>
+                    <div class="col border gestion">
+                    <p>Acciones parcialmente eficaces: {{noConforme.pEficaz}}</p></div>
+                    <div class="col border gestion">
+                    <p>Acciones en proceso: {{noConforme.enProceso}}</p></div>
+                    <div class="col border gestion">
+                    <p>Acciones no eficaces: {{noConforme.noEficaz}}</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<div class="container p-4">
+    <header class="masthead d-flex">
+        <div class="container text-center my-auto">
+            <div class="row mb-5">
+                    <h1 class="hola">
+                        NO CONFORMIDADES DEL PROCESO
+                    </h1>
+            </div>
+        </div>
+    </header>
+    <div class="row">
+        {{#each hallazgos}}
+            <div class="row-md-3 mb-2">
+                <div class="card text-center">
+                    <a href="/no_conforme/gestion/{{idhallazgo}}">
+                        <div class="card-header text-bg-dark">
+                            <h6 class="card-title text-uppercase">
+                                HALLAZGO {{math @index "+" 1}}
+                            </h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="col-md-4 mx-auto">
+                                <h5>Causa: {{causa}}</h5>
+                                <h5 class="m-2">Consecuencia: {{hallazgo}}</h5>
+                                <h4>Acciones</h4>
+                                    <h5>{{accion_correctiva}}</h5>
+                                <a href="/no_conforme/delete/{{idhallazgo}}" class="btn btn-danger">Borrar</a>
+                                <a href="/no_conforme/edit/{{idhallazgo}}" class="btn btn-secondary">Editar</a>
+                            </div>
+                        </div>
+                    </a> 
+                </div>
+            </div>
+        {{else}}
+            <div class="row-md-4 mx-auto text-center">
+                <p>Aún no hay hallazgos detectados para este proceso</p>
+            </div>
+        {{/each}}
+    </div>
+    <div class="col-md-3 p-4 mx-auto text-center">
+        <a href="no_conforme/add">
+            <div class="btn btn-primary mx-auto text-center">
+                        Agregar nuevo hallazgo
+            </div>
+        </a>
+    </div>
+</div>

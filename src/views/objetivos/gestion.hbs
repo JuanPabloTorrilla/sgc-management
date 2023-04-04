@@ -1,0 +1,117 @@
+<div class="container p-4">
+    <div class="row my-4 text-center">
+        <h2>GESTION DEL OBJETIVO</h2>
+    </div>
+    <div class="row px-2 mx-auto">
+        <div class="card p-3">
+            <div class="card-header">
+                <h5>DATOS DEL OBJETIVO</h5>
+            </div>
+            <div class="card-body">
+                <div class="row border">
+                    <div class="col bg-light fw-semibold gestion">Objetivo</div>
+                    <div class="col gestion mid-basis">{{objetivo.objetivo}}</div>
+                </div>
+                <div class="row border border-top-0">
+                    <div class="col bg-light gestion fw-semibold">Estratégico asociado</div>
+                    <div class="col gestion mid-basis">{{objetivo.asociado}}</div>
+                </div>
+                <div class="row border border-top-0">
+                    <div class="col bg-light gestion fw-semibold">Umbral de cumplimiento</div>
+                    <div class="col gestion mid-basis">{{objetivo.umbral}}</div>
+                </div>
+                <div class="row border border-top-0">
+                    <div class="col bg-light gestion fw-semibold">Medición Base</div>
+                    <div class="col gestion mid-basis">{{objetivo.base}}</div>
+                </div>
+                <div class="row border border-top-0">
+                    <div class="col bg-light gestion fw-semibold">Período de Medición Base</div>
+                    <div class="col gestion mid-basis">{{objetivo.periodo_base}}</div>
+                </div>
+            </div>
+            <div class="card-header">
+                <h5>INDICADOR</h5>
+            </div>
+            <div class="card-body">
+                <div class="row border">
+                    <div class="col bg-light fw-semibold gestion">Fuente de los datos</div>
+                    <div class="col gestion mid-basis">{{objetivo.fuente}}</div>
+                </div>
+                <div class="row border border-top-0">
+                    <div class="col bg-light fw-semibold gestion">Fórmula para medir</div>
+                    <div class="col gestion mid-basis">{{objetivo.formula}}</div>
+                </div>
+                <div class="row border border-top-0">
+                    <div class="col bg-light fw-semibold gestion">Frecuencia de Medición</div>
+                    <div class="col gestion mid-basis">{{objetivo.frecuencia}}</div>
+                </div>
+                <div class="row border border-top-0">
+                    <div class="col bg-light fw-semibold gestion">Reponsable del Seguimiento</div>
+                    <div class="col gestion mid-basis">{{objetivo.responsable}}</div>
+                </div>
+                <div class="row border border-top-0">
+                    <div class="col bg-light fw-semibold gestion">Planificación de la Tarea</div>
+                    <div class="col gestion mid-basis">{{objetivo.estrategia}}</div>
+                </div>
+            </div>
+            <div class="card-header">
+                <h5>RESULTADO PREVIO</h5>
+            </div>
+            <div class="card-body">
+                <div class="row border">
+                    <div class="col bg-light fw-semibold gestion">Resultado</div>
+                    {{#if resultado.resultado}}
+                        <div class="col gestion mid-basis">{{resultado.resultado}}</div>
+                    {{else}}
+                        <div class="col gestion mid-basis text-secondary">Aún no se registran resultados.</div>
+                    {{/if}}
+                </div>
+                <div class="row border border-top-0">
+                    <div class="col bg-light fw-semibold gestion">Cumplimiento</div>
+                    {{#if resultado.cumplimiento}}
+                        <div class="col gestion mid-basis">{{resultado.cumplimiento}}</div>
+                    {{else}}
+                        <div class="col gestion mid-basis text-secondary">Aún no se evalúa el cumplimiento.</div>
+                    {{/if}}
+                </div>
+                <div class="row border border-top-0">
+                    <div class="col bg-light fw-semibold gestion">Fecha de medición</div>
+                    <div class="col gestion mid-basis">{{fecha_medicion}}</div>
+                </div>
+            </div>
+            <div class="card-header">
+                <h5>MEDICION ACTUAL</h5>
+            </div>
+            <div class="card-body">
+                <form action="{{id}}" method="post">
+                    <div class="row border">
+                        <div class="col bg-light fw-semibold gestion">Resultado</div>
+                        <input class="col gestion mid-basis form-control" name="resultado" placeholder="Ingrese aquí los valores de la última medición.">
+                    </div>
+                    <div class="row border border-top-0">
+                        <div class="col bg-light fw-semibold gestion">Cumplimiento</div>
+                        <select name="cumplimiento" class="col gestion mid-basis form-control">
+                            <option>Seleccione...</option>
+                            <option value="cumpliendo">Objetivo en cumplimiento</option>
+                            <option value="cumplido">Objetivo cumplido</option>
+                            <option value="umbral">Se alcanza el umbral</option>
+                            <option value="incumplido">No se cumple el objetivo</option>
+                        </select>
+                    </div>
+                    <div class="row border border-top-0">
+                        <div class="col bg-light fw-semibold gestion">Observaciones</div>
+                        <textarea class="col gestion mid-basis form-control" name="observaciones" placeholder="Comentarios que considere pertinentes sobre el objetivo"></textarea>
+                    </div>
+                    <div class="row border border-top-0">
+                        <button class="col btn btn-success btn-block">
+                            Guardar
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <a href='/objetivos' class="mx-auto btn btn-secondary btn-block">
+                    Volver
+            </a>
+        </div>
+    </div>
+</div>

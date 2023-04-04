@@ -1,0 +1,58 @@
+<div class="container p-4">
+    <div class="row">
+            <div class="card">
+                <div class="card-header bg-secondary text-white text-center"><h1>
+                    AGREGAR NUEVO OBJETIVO
+                </h1></div>
+                <div class="card-body">
+                    <form action="add" method="post">
+                        <div class="mb-3 form-floating">
+                            <textarea type="text" rows="2" class="form-control" name="objetivo" placeholder="Objetivo"></textarea>
+                            <label for="objetivo">Objetivo</label>
+                        </div>
+                        <div class="mb-3 form-floating">
+                            <textarea type="text" rows="2" class="form-control" name="asociado" placeholder="Objetivo estratégico asociado"></textarea>
+                            <label for="asociado">Objetivo estratégico asociado</label>
+                        </div>
+                        <div class="mb-3 form-floating">
+                            <input type="text" rows="2" class="form-control" name="umbral" placeholder="Umbral de cumplimiento">
+                            <label for="umbral">Umbral de cumplimiento</label>
+                        </div>
+                        <div class="mb-3 form-floating">
+                            <textarea type="text" rows="2" class="form-control" name="base" placeholder="Medición base"></textarea>
+                            <label for="base">Medición base</label>
+                        </div>
+                        <div class="mb-3 form-floating">
+                            <textarea type="date" rows="2" class="form-control" name="periodo_base" placeholder="Fecha de medición base"></textarea>
+                            <label for="periodo_base">Fecha de medición base</label>
+                        </div>
+                        <div class="mb-3 form-floating">
+                            <textarea type="text" rows="2" class="form-control" name="fuente" placeholder="Fuente de origen de los datos"></textarea>
+                            <label for="fuente">Fuente de origen de los datos</label>
+                        </div>
+                        <div class="mb-3 form-floating">
+                            <textarea type="text" rows="2" class="form-control" name="formula" placeholder="Fórmula de medición"></textarea>
+                            <label for="formula">Fórmula de medición</label>
+                        </div>
+                        <div class="mb-3 form-floating">
+                            <textarea type="text" rows="2" class="form-control" name="frecuencia" placeholder="Frecuencia de control"></textarea>
+                            <label for="frecuencia">Frecuencia de control</label>
+                        </div>
+                        <div class="mb-3 form-floating">
+                            <textarea type="text" rows="2" class="form-control" name="responsable" placeholder="Responsable de seguimiento"></textarea>
+                            <label for="responsable">Responsable de seguimiento</label>
+                        </div>
+                        <div class="mb-3 form-floating">
+                            <textarea type="text" rows="2" class="form-control" name="estrategia" placeholder="Plan para el cumplimiento"></textarea>
+                            <label for="estrategia">Plan para el cumplimiento</label>
+                        </div>
+                        <div class="mb-3 d-grid gap-2">
+                            <button class="btn btn-success btn-block">
+                                Agregar Objetivo
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    </div>
+</div>

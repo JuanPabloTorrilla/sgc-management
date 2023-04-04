@@ -1,0 +1,120 @@
+{{#riesgo}}
+<div class="container p-4">
+    <div class="row">
+        <div class="card">
+            <form action={{idriesgos}} method="post">
+                <div class="card-body" id="riesgos-form">    
+                    <div class="col-md-4">
+                        <div class="form-floating mb-3">
+                            <textarea id="riesgo" type="text" rows="4" class="form-control" name="riesgo" placeholder="Riesgo detectado" required>{{riesgo}}</textarea>
+                            <label for="riesgo">Riesgo detectado</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <textarea type="text" rows="4" class="form-control" name="causa" placeholder="Causa" required>{{causa}}</textarea>
+                            <label for="causa">Causa</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input id="fecha_deteccion" type="date" class="form-control" name="fecha_deteccion" value={{fecha_deteccion}} required>
+                            <label for="fecha_deteccion">Fecha de detección actual</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" name="parte_afectada" placeholder="Parte interesada afectada" value={{parte_afectada}} required>
+                            <label for="parte_afectada">Parte afectada</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <select class="form-control" name="probabilidad_ini" placeholder="Probabilidad inicial"required>
+                                <option value={{probabilidad_ini}}>{{probabilidad_ini}}</option>
+                                <option value="Muy Baja">Muy Baja</option>
+                                <option value="Baja">Baja</option>
+                                <option value="Media">Media</option>
+                                <option value="Alta">Alta</option>
+                                <option value="Muy Alta">Muy Alta</option>
+                            </select>
+                            <label for="probabilidad_ini">Probabilidad inicial</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <select class="form-control" name="impacto_ini" placeholder="Impacto inicial"required>
+                                <option value={{impacto_ini}}>{{impacto_ini}}</option>
+                                <option value="Insignificante">Insignificante</option>
+                                <option value="Leve">Leve</option>
+                                <option value="Medio">Medio</option>
+                                <option value="Severo">Severo</option>
+                                <option value="Muy Severo">Muy Severo</option>
+                            </select>
+                            <label for="impacto_ini">Impacto inicial</label>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div id="container-acciones">
+                            {{#each accion}}
+                            <div class="form-floating mb-3 d-flex">
+                                <textarea type="text" rows="4" class="form-control" name="accion" placeholder="Accion" required>{{accion}}</textarea>
+                                <label for="accion">Acción</label>
+                                <button id="borrar{{@index}}" class="btn btn-danger delete" type="button" onclick="deleteAction(id)">X</button>
+                            </div>
+                            {{/each}}
+                        </div>
+                        <div class="mb-1">
+                            <button type="button" class="btn btn-secondary" onclick="addAction()">Agregar Acción</button>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" name="frecuencia" placeholder="Frecuencia" value={{frecuencia}} required>
+                            <label for="frecuencia">Frecuencia</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="date" class="form-control" name="ultimo_control" value={{ultimo_control}} required>
+                            <label for="ultimo_control">Fecha del último control</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="date" class="form-control" name="proximo_control" value={{proximo_control}} required>
+                            <label for="proximo_control">Fecha del próximo control</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <select class="form-control" name="probabilidad_final" placeholder="Probabilidad actual" required>
+                                <option value={{probabilidad_final}}>{{probabilidad_final}}</option>
+                                <option value="Muy Baja">Muy Baja</option>
+                                <option value="Baja">Baja</option>
+                                <option value="Media">Media</option>
+                                <option value="Alta">Alta</option>
+                                <option value="Muy Alta">Muy Alta</option>
+                            </select>
+                            <label for="probabilidad_final">Probabilidad actual</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <select class="form-control" name="impacto_final" placeholder="Impacto actual" required>
+                                <option value={{impacto_final}}>{{impacto_final}}</option>
+                                <option value="Insignificante">Insignificante</option>
+                                <option value="Leve">Leve</option>
+                                <option value="Medio">Medio</option>
+                                <option value="Severo">Severo</option>
+                                <option value="Muy Severo">Muy Severo</option>
+                            </select>
+                            <label for="impacto_final">Impacto actual</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <select class="form-control" name="resultado"  required>
+                                <option value="Pendiente">Pendiente</option>
+                                <option value="En proceso">En proceso</option>
+                                <option value="Riesgo controlado">Riesgo controlado</option>
+                                <option value="Riesgo eliminado">Riesgo eliminado</option>
+                                <option value="Riego no controlado">Riesgo no controlado</option>
+                                <option selected value={{resultado}}>{{resultado}}</option>
+                            </select>
+                            <label for="resultado">Resultado</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <textarea type="text" rows="4" class="form-control" name="observaciones" placeholder="Observaciones">{{observaciones}}</textarea>
+                            <label for="observaciones">Observaciones</label>
+                        </div>
+                    </div>
+                </div>
+                    <div class="row">
+                        <button class="btn btn-success btn-block">
+                            Guardar Cambios
+                        </button>
+                    </div>
+                </form>
+        </div>
+    </div>
+</div>
+{{/riesgo}}

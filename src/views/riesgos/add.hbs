@@ -1,0 +1,119 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="card">
+             <div class="row text-center bg-cyan">
+                <h2>AGREGAR NUEVO RIESGO</h2>
+             </div>
+            <form action="add" method="post">
+                <div class="card-body" id="riesgos-form">    
+                    <div class="col-md-4">
+                        <div class="form-floating mb-3">
+                            <textarea id="riesgo" type="text" rows="2" class="form-control" name="riesgo" placeholder="Riesgo detectado" required></textarea>
+                            <label for="riesgo">Riesgo detectado</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <textarea type="text" rows="2" class="form-control" name="causa" placeholder="Causa" required></textarea>
+                            <label for="causa">Causa</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input id="fecha_deteccion" type="date" class="form-control" name="fecha_deteccion" placeholder="Fecha de detección" required>
+                            <label for="fecha_deteccion">Fecha de detección</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" name="parte_afectada" placeholder="Parte interesada afectada" required>
+                            <label for="parte_afectada">Parte afectada</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <select class="form-control" name="probabilidad_ini" placeholder="Probabilidad inicial"required>
+                                <option ></option>
+                                <option value="Muy Baja">Muy Baja</option>
+                                <option value="Baja">Baja</option>
+                                <option value="Media">Media</option>
+                                <option value="Alta">Alta</option>
+                                <option value="Muy Alta">Muy Alta</option>
+                            </select>
+                            <label for="probabilidad_ini">Probabilidad inicial</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <select class="form-control" name="impacto_ini" placeholder="Impacto inicial"required>
+                                <option></option>
+                                <option value="Insignificante">Insignificante</option>
+                                <option value="Leve">Leve</option>
+                                <option value="Medio">Medio</option>
+                                <option value="Severo">Severo</option>
+                                <option value="Muy Severo">Muy Severo</option>
+                            </select>
+                            <label for="impacto_ini">Impacto inicial</label>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div id="container-acciones">
+                            <div class="form-floating mb-3">
+                                <textarea type="text" rows="2" class="form-control" name="accion" placeholder="Accion" required></textarea>
+                                <label for="accion">Acción</label>
+                            </div>
+                        </div>
+                        <div class="mb-1">
+                            <button type="button" class="btn btn-secondary" onclick="addAction()">Agregar Acción</button>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" name="frecuencia" placeholder="Frecuencia" required>
+                            <label for="frecuencia">Frecuencia</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="date" class="form-control" name="ultimo_control" placeholder="Fecha del último control" required>
+                            <label for="ultimo_control">Fecha del último control</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="date" class="form-control" name="proximo_control" placeholder="Fecha del próximo control" required>
+                            <label for="proximo_control">Fecha del próximo control</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <select class="form-control" name="probabilidad_final" placeholder="Probabilidad actual" required>
+                                <option disabled>Seleccionar...</option>
+                                <option value="Muy Baja">Muy Baja</option>
+                                <option value="Baja">Baja</option>
+                                <option value="Media">Media</option>
+                                <option value="Alta">Alta</option>
+                                <option value="Muy Alta">Muy Alta</option>
+                            </select>
+                            <label for="probabilidad_final">Probabilidad actual</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <select class="form-control" name="impacto_final" placeholder="Impacto actual" required>
+                                <option disabled>Seleccionar...</option>
+                                <option value="Insignificante">Insignificante</option>
+                                <option value="Leve">Leve</option>
+                                <option value="Medio">Medio</option>
+                                <option value="Severo">Severo</option>
+                                <option value="Muy Severo">Muy Severo</option>
+                            </select>
+                            <label for="impacto_final">Impacto actual</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <select class="form-control" name="resultado" placeholder="Resultado" required>
+                                <option disabled>Seleccionar...</option>
+                                <option value="Pendiente">Pendiente</option>
+                                <option value="En proceso">En proceso</option>
+                                <option value="Riesgo controlado">Riesgo controlado</option>
+                                <option value="Riesgo eliminado">Riesgo eliminado</option>
+                                <option value="Riego no controlado">Riego no controlado</option>
+                            </select>
+                            <label for="resultado">Resultado</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <textarea type="text" rows="2" class="form-control" name="observaciones" placeholder="Observaciones"></textarea>
+                            <label for="observaciones">Observaciones</label>
+                        </div>
+                    </div>
+                </div>
+                    <div class="row">
+                        <button class="btn btn-success btn-block">
+                            Agregar Riesgo
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

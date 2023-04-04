@@ -1,0 +1,30 @@
+.gestion-xl{
+    min-width: 18rem;
+}
+.mid-basis{
+    flex-basis: 50%;
+}
+.gestion{
+    min-width: 12.12rem;
+}
+textarea{
+    height: 100%!important;
+}
+label{
+    color: rgb(182, 182, 182)
+}
+.delete{
+    height: 50%;
+    margin: auto;
+}
+.menu{
+    display: flex;
+}
+#riesgos-form{
+    display: flex;
+    justify-content: space-around;
+}
+
+a{
+    text-decoration: none;
+};

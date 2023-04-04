@@ -1,0 +1,73 @@
+<div class="container p-4">
+    <header class="masthead d-flex">
+        <div class="container text-center my-auto">
+            <div class="row mb-5">
+                    <h1 class="hola">
+                        RIESGOS DEL PROCESO
+                    </h1>
+            </div>
+        </div>
+    </header>
+    <div class="row">
+        {{#each riesgos}}
+            <div class="row-md-3 mb-2">
+                <div class="card text-center">
+                    <a href="/riesgos/gestion/{{idriesgos}}">
+                    {{#if (ifValue valor_riesgo_final "Muy Alto")}}
+                        <div class="card-header text-bg-danger">
+                            <h6 class="card-title text-uppercase">
+                                RIESGO {{math @index "+" 1}}
+                            </h6>
+                        </div>
+                    {{/if}}
+                    {{#if (ifValue valor_riesgo_final "Alto")}}
+                        <div class="card-header text-bg-warning">
+                            <h6 class="card-title text-uppercase">
+                                RIESGO {{math @index "+" 1}}
+                            </h6>
+                        </div>
+                    {{/if}}
+                    {{#if (ifValue valor_riesgo_final "Moderado")}}
+                        <div class="card-header text-bg-primary">
+                            <h6 class="card-title text-uppercase">
+                                RIESGO {{math @index "+" 1}}
+                            </h6>
+                        </div>
+                    {{/if}}
+                    {{#if (ifValue valor_riesgo_final "Bajo")}}
+                        <div class="card-header text-bg-success">
+                            <h6 class="card-title text-uppercase">
+                                RIESGO {{math @index "+" 1}}
+                            </h6>
+                        </div>
+                    {{/if}}
+                        <div class="card-body">
+                            <div class="col-md-4 mx-auto">
+                                <h5>Causa: {{causa}}</h5>
+                                <h5 class="m-2">Consecuencia: {{riesgo}}</h5>
+                                <h4>Acciones</h4>
+                                {{#each acciones}}
+                                    <h5>{{accion}}</h5>
+                                {{/each}}
+                                <h4>Valoración del riesgo: {{valor_riesgo_final}}</h4>
+                                <a href="/riesgos/delete/{{idriesgos}}" class="btn btn-danger">Borrar</a>
+                                <a href="/riesgos/edit/{{idriesgos}}" class="btn btn-secondary">Editar</a>
+                            </div>
+                        </div>
+                    </a> 
+                </div>
+            </div>
+        {{else}}
+            <div class="row-md-4 mx-auto text-center">
+                <p>Aún no hay riesgos detectados para este proceso</p>
+            </div>
+        {{/each}}
+    </div>
+    <div class="col-md-3 p-4 mx-auto text-center">
+        <a href="riesgos/add">
+            <div class="btn btn-primary mx-auto text-center">
+                        <p>Agregar nuevo riesgo</p>
+            </div>
+        </a>
+    </div>
+</div>
