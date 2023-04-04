@@ -2,11 +2,11 @@
   "name": "sgc_management",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/app.js",
   "scripts": {
     "dev": "nodemon index.js",
     "start": "node index.js",
-    "build": "node src/app.js",
+    "build": "node index.js",
     "vercel-build": "node index.js"
   },
   "keywords": [],
